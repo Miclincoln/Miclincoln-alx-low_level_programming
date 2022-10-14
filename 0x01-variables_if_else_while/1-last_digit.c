@@ -11,22 +11,23 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-	int n, last;
+	int n, l;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	last = n % 10;
-	if (last > 5)
+	l = n % 10;
+	if (l > 5)
 	{
-		printf("The last digit of %d is %d and i greater than 5", n, last);
+		printf("The last digit of %d is %d and is greater than 5\n", n, l);
 	}
-	else if (last == 0)
+	else if (l == 0)
 	{
-		printf("The last digit of %d is %d and is 0", n, last);
+		printf("The last digit of %d is %d and is 0\n", n, l);
 	}
-	else if (last < 6 && last > 0)
+	else if (l < 6 && l > 0)
 	{
-		printf("The last digit of %d is %d and is less than 6 and not 0", n, last);
+		printf("The last digit of %d is %d and is less than 6 and not 0\n", n, l);
 	}
 	/* your code goes there */
 	return (0);
+}
