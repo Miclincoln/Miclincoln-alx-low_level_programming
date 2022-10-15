@@ -16,6 +16,8 @@ int main(void)
 		if (i > 0)
 		{
 			putchar(',');
+
+			putchar(' ');
 		}
 
 		putchar(i + '0');
