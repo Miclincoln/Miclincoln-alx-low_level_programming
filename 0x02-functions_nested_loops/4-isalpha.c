@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* _isalphabet - A function that checks for alphabetic character.
+* _isalpha - A function that checks for alphabetic character.
 * @c: Function argument.
 * Return: Always 0.
 **/
