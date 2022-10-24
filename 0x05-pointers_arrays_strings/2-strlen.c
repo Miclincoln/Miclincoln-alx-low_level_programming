@@ -17,7 +17,14 @@ int _strlen(char *s)
 	{
 		i++;
 		s++;
-		lenght = i;
+		if (i > 0)
+		{
+			lenght = i;
+		}
+		else
+		{
+			lenght = 0;
+		}
 	}
 	return (lenght);
 }
