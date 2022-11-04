@@ -11,4 +11,3 @@ int is_palindrome(char*);
 int get_length(char*);
 int my_pal(char*, int);
 int findsrc(char*, char, int, int);
-int wildcmp(char*, char);
