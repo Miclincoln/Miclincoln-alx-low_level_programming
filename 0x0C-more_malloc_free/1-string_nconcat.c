@@ -1,51 +1,44 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * string_nconcat - concatenate 2 strings, only n bytes of s2
- * @s1: string 1
- * @s2: string 2
- * @n: bytes to include of s2
- * Return: NULL if fail, else pointer to malloc memory
+ * string_nconcat - concatenates two strings
+ * @s1: destination string
+ * @s2: source string
+ * @n: number of characters to be copied
+ * Return: copied
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *p;
-	int strlen1, i, c;
+	unsigned int s1_len = 0, s2_len = 0, i;
+	char *s;
 
+	/* if NULL is passed, treat as an empty string */
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	strlen1 = (unsigned int)_strlen(s1);
-	p = malloc((strlen1 + n + 1) * sizeof(char));
-	if (p == NULL)
+	/* While at index 0 */
+	while (s1[s1_len] != '\0')
+		s1_len++;
+	while (s2[s2_len] != '\0')
+		s2_len++;
+
+	if (n >= s2_len)
+		n = s2_len;
+
+	/* Memory allocation */
+	s = malloc(sizeof(char) * n + s1_len + 1);
+	if (s == NULL)
 		return (NULL);
-	for (i = 0, c = 0; i < (strlen1 + n); i++)
-	{
-		if (i < strlen1)
-			p[i] = s1[i];
-		else
-			p[i] = s2[c++];
-	}
-	p[i] = '\0';
 
-	return (p);
-}
+	for (i = 0; i < s1_len; i++)
+		s[i] = s1[i];
 
-/**
- * _strlen - find length of string
- * @s: string
- * Return: length of string
- */
+	for (i = 0; i < n; i++)
+		s[i + s1_len] = s2[i];
 
-int _strlen(char *s)
-{
-	int i;
+	s[i + s1_len] = '\0';
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (i);
+	return (s);
 }
