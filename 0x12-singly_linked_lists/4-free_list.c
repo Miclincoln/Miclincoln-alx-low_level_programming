@@ -4,9 +4,9 @@
 
 /**
 * free_list - A fucntion to free a list
-* @head: pointer to node
-* @tmp: disposable pointer
 * free - free mallocs
+* @head: pointer to node
+* @tmp - disposable pointer
 * Return: void
 **/
 
